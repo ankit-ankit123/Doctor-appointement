@@ -26,7 +26,7 @@ export const authActions = {
 export const loginUser = (credentials) => async (dispatch) => {
   dispatch(authActions.setLoading(true))
   try {
-    const response = await fetch('http://localhost:5000/api/auth/login', {
+    const response = await fetch('https://doctor-appointement-pmxz.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(credentials),
@@ -46,7 +46,7 @@ export const loginUser = (credentials) => async (dispatch) => {
 export const registerUser = (payload) => async (dispatch) => {
   dispatch(authActions.setLoading(true))
   try {
-    const response = await fetch('http://localhost:5000/api/auth/register', {
+    const response = await fetch('https://doctor-appointement-pmxz.onrender.com/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

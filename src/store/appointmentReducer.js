@@ -14,7 +14,7 @@ export const appointmentActions = {
 export const fetchAppointments = (token, patientId) => async (dispatch) => {
   dispatch(appointmentActions.setLoading(true))
   try {
-    const url = new URL('http://localhost:5000/api/appointments')
+    const url = new URL('https://doctor-appointement-pmxz.onrender.com/api/appointments')
     if (patientId) {
       url.searchParams.append('patientId', patientId)
     }
@@ -38,7 +38,7 @@ export const fetchAppointments = (token, patientId) => async (dispatch) => {
 export const createAppointment = (token, appointment) => async (dispatch) => {
   dispatch(appointmentActions.setLoading(true))
   try {
-    const response = await fetch('http://localhost:5000/api/appointments', {
+    const response = await fetch('https://doctor-appointement-pmxz.onrender.com/api/appointments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       body: JSON.stringify(appointment),
